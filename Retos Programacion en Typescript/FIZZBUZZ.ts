@@ -7,21 +7,26 @@
  * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
  */
 
-function fizzbuzz(): void {
-    for (let index = 1; index <= 100; index++) {
-        let buzz: boolean = (index % 5 == 0);
-        let fazz: boolean = (index % 3 == 0);
+function fizzbuzz(indice: number): void {
 
-        if (buzz && fazz) {
-            console.log(index + " fizzbuzz");
-        } else if (buzz) {
-            console.log(index + " buzz");
-        } else if (fazz) {
-            console.log(index + " fizz");
-        } else {
-            console.log(index);
-        }
+    if (indice == 101)
+        return;
+
+    let buzz: boolean = (indice % 5 == 0);
+    let fazz: boolean = (indice % 3 == 0);
+
+    if (buzz && fazz) {
+        console.log(indice + " fizzbuzz");
+    } else if (buzz) {
+        console.log(indice + " buzz");
+    } else if (fazz) {
+        console.log(indice + " fizz");
+    } else {
+        console.log(indice);
     }
+
+
+    fizzbuzz(indice + 1);
 }
 
-fizzbuzz();
+fizzbuzz(1);
